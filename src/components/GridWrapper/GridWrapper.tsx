@@ -3,7 +3,7 @@ import { GridOptions } from '@ag-grid-community/core';
 import { AgGrid } from '../../AgGridServices';
 import { data } from './data';
 import { TData } from './types';
-import { columnsConfig } from './columnsConfig';
+import { columnsConfig, defaultColDef } from './columnsConfig';
 import { GridWToolbar } from '../GridWToolbar';
 import { AgGridToolbarParams } from '../AgGridToolbar';
 
@@ -12,8 +12,8 @@ function GridWrapper() {
   const columnDefs = columnsConfig;
 
   const gridOptions: GridOptions<TData> = {
-    // rowData,
     columnDefs,
+    defaultColDef,
     columnTypes: AgGrid.columnTypes<TData>('primaryKey', 'text'),
   };
 

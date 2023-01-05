@@ -1,6 +1,12 @@
 import { TData } from './types';
 import { AgGrid, ColumnTypeEnum } from '../../AgGridServices';
 
+export const defaultColDef = {
+  flex: 1,
+  minWidth: 100,
+  resizable: true,
+};
+
 export const columnsConfig = AgGrid.colDefs<TData>([
   { field: 'id', type: ColumnTypeEnum.primaryKey },
   {
