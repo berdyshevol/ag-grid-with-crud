@@ -4,7 +4,8 @@ import { AgGrid } from '../../AgGridServices';
 import { data } from './data';
 import { TData } from './types';
 import { columnsConfig } from './columnsConfig';
-import AgGridRender from '../AgGridRender';
+import { GridWToolbar } from '../GridWToolbar';
+import { AgGridToolbarParams } from '../AgGridToolbar';
 
 function GridWrapper() {
   const [rowData, setRowData] = useState(data);
@@ -25,13 +26,18 @@ function GridWrapper() {
     });
   };
 
+  const toolbar: AgGridToolbarParams<TData> = {
+    right: ['search'],
+  };
+
   return (
     <>
       <button onClick={onClick}>Get Data</button>
-      <AgGridRender
+      <GridWToolbar
         rowData={rowData}
         columnDefs={columnDefs}
         gridOptions={gridOptions}
+        toolbar={toolbar}
       />
     </>
   );

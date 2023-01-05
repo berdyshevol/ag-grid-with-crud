@@ -1,1 +1,2 @@
-export { default } from './AgGridToolbar';
+export * from './AgGridToolbar';
+export * from './types';

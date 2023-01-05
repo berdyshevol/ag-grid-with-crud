@@ -9,7 +9,7 @@ const getHeight = (height: number | undefined): number => {
   const { innerHeight } = window;
   return height === undefined ? Number(innerHeight) : height;
 };
-interface IProps<TData> {
+export interface IAgGridRenderProps<TData> {
   rowData: GridOptions<TData>['rowData'];
   columnDefs: GridOptions<TData>['columnDefs'];
   gridOptions?: GridOptions<TData>;
@@ -21,13 +21,17 @@ function AgGridRender<TData>({
   columnDefs: columnDefsInit,
   gridOptions = {},
   height,
-}: IProps<TData>) {
+}: IAgGridRenderProps<TData>) {
   const [columnDefs] = useState(columnDefsInit);
   const {
     rowData: ignoreThisRowData,
     columnDefs: ignoreThisColumnDefs,
     ...newGridOptions
   } = gridOptions;
+  const augmentedGridSettings: GridOptions<TData> = {
+    ...newGridOptions,
+    rowGroupPanelShow: 'never',
+  };
   const gridHeight = getHeight(height);
 
   return (
@@ -36,11 +40,11 @@ function AgGridRender<TData>({
         <AgGridReact
           rowData={rowData}
           columnDefs={columnDefs}
-          gridOptions={newGridOptions}
+          gridOptions={augmentedGridSettings}
         />
       </div>
     </div>
   );
 }
 
-export default AgGridRender;
+export { AgGridRender };

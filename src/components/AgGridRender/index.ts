@@ -1,1 +1,1 @@
-export { default } from './AgGridRender';
+export * from './AgGridRender';

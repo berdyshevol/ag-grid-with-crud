@@ -1,0 +1,65 @@
+.Toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 46px;
+  color: $text-color;
+  background-color: #fff;
+  border: 1px solid $light-grey;
+  border-bottom: none;
+  font-size: 14px;
+
+  &-Left {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-grow: 1;
+    height: 100%;
+  }
+  &-Right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-grow: 1;
+    height: 100%;
+  }
+
+  &-Button {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    border: none;
+    background-color: transparent;
+    transition: 0.3s;
+    padding: 12px 18px;
+    color: #333;
+
+    &_Grouping {
+      color: #08507e;
+      background: #eef1f2;
+    }
+
+    &:hover {
+      background-color: lighten($light-grey, 10%);
+    }
+
+    &:disabled {
+      color: lighten($text-color, 25%);
+      cursor: not-allowed;
+    }
+
+    .MuiSvgIcon-root {
+      width: 17px;
+      height: 17px;
+    }
+  }
+
+  .ToolbarSearch {
+    margin: auto 5px;
+    &-Input {
+      padding: 5px 10px;
+      border: 1.2px solid $light-grey;
+    }
+  }
+}

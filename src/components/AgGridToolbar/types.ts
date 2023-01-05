@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 
-export type CustomToolbarItem = {
-  callback: AgGridToolbarHandler;
+export type CustomToolbarItem<TData> = {
+  callback: AgGridToolbarHandler<TData>;
   textAfterIcon?: string;
   icon?: ReactElement | SVGElement;
   dataCy?: string;
@@ -17,13 +17,13 @@ export type ToolbarItemNames =
   | 'grouping'
   | 'export'
   | 'search';
-export type ToolbarItem = ToolbarItemNames | CustomToolbarItem;
+export type ToolbarItem<TData> = ToolbarItemNames | CustomToolbarItem<TData>;
 
-export type AgGridToolbarParams =
+export type AgGridToolbarParams<TData> =
   | {
-      left?: ToolbarItem[];
-      right?: ToolbarItem[];
+      left?: ToolbarItem<TData>[];
+      right?: ToolbarItem<TData>[];
     }
   | undefined;
 
-export type AgGridToolbarHandler = <TData>(args: TData) => Promise<any>;
+export type AgGridToolbarHandler<TData> = (args: TData) => Promise<any>;
