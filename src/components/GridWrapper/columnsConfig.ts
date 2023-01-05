@@ -1,8 +1,7 @@
-import { GridOptions } from '@ag-grid-community/core';
 import { TData } from './types';
-import { ColumnTypeEnum } from '../../AgGridServices';
+import { AgGrid, ColumnTypeEnum } from '../../AgGridServices';
 
-export const columnsConfig: GridOptions<TData>['columnDefs'] = [
+export const columnsConfig = AgGrid.colDefs<TData>([
   { field: 'id', type: ColumnTypeEnum.primaryKey },
   {
     field: 'manufacture',
@@ -38,4 +37,4 @@ export const columnsConfig: GridOptions<TData>['columnDefs'] = [
     field: 'yield',
     type: [ColumnTypeEnum.text],
   },
-];
+]);

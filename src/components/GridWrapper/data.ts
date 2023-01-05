@@ -21,7 +21,7 @@ export const data: TData[] = [
     ip_address: '0.0.0.0',
     assert_number: '383838383',
     erp_id: '383838383',
-    level: 100,
+    level: 50,
     coverage: 4,
     yield: '???',
   },
