@@ -26,7 +26,7 @@ function GridWrapper() {
     });
   };
 
-  const toolbar: AgGridToolbarParams<TData> = {
+  const toolbar: AgGridToolbarParams = {
     right: ['search'],
   };
 

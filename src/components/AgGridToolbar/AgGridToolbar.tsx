@@ -5,19 +5,14 @@ import {
   ToolbarItemNames,
 } from './types';
 
-interface IProps<TData> {
-  toolbar?: AgGridToolbarParams<TData>;
-  handlers?: Record<ToolbarItemNames, AgGridToolbarHandler<TData>>;
+interface IProps {
+  toolbar?: AgGridToolbarParams;
+  handlers?: Record<ToolbarItemNames, AgGridToolbarHandler>;
   isEditing?: boolean;
   isGrouping?: boolean;
 }
 
-function AgGridToolbar<TData>({
-  toolbar,
-  handlers,
-  isEditing,
-  isGrouping,
-}: IProps<TData>) {
+function AgGridToolbar({ toolbar, handlers, isEditing, isGrouping }: IProps) {
   if (!toolbar) {
     return null;
   }

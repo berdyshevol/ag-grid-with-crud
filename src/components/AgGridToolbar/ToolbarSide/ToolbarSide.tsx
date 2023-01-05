@@ -1,19 +1,19 @@
 import { AgGridToolbarHandler, ToolbarItem, ToolbarItemNames } from '../types';
 import FactoryButtons from './FactoryButtons';
 
-interface ToolbarSideProps<TData> {
-  side: ToolbarItem<TData>[];
-  handlers?: Record<ToolbarItemNames, AgGridToolbarHandler<TData>>;
+interface ToolbarSideProps {
+  side: ToolbarItem[];
+  handlers?: Record<ToolbarItemNames, AgGridToolbarHandler>;
   isEditing?: boolean;
   isGrouping?: boolean;
 }
 
-function ToolbarSide<TData>({
+function ToolbarSide({
   side,
   handlers,
   isEditing,
   isGrouping,
-}: ToolbarSideProps<TData>) {
+}: ToolbarSideProps) {
   return (
     <>
       {side.map(item => {

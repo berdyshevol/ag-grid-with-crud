@@ -8,19 +8,19 @@ import { SearchInput } from './SearchInput';
 import { RemoveRowButton } from './RemoveRowButton';
 import { AgGridToolbarHandler, ToolbarItemNames } from '../../types';
 
-interface FactoryButtonsProps<TData> {
+interface FactoryButtonsProps {
   item?: ToolbarItemNames;
-  handler?: AgGridToolbarHandler<TData>;
+  handler?: AgGridToolbarHandler;
   isEditing?: boolean;
   isGrouping?: boolean;
 }
 
-function FactoryButtons<TData>({
+function FactoryButtons({
   item,
   handler,
   isEditing,
   isGrouping,
-}: FactoryButtonsProps<TData>) {
+}: FactoryButtonsProps) {
   switch (item) {
     case 'export':
       return <ExportButton handler={handler} />;
