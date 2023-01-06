@@ -25,33 +25,41 @@ export const columnsConfig = AgGrid.colDefs<TData>([
   { field: 'id', type: ColumnTypeEnum.primaryKey },
   {
     field: 'manufacture',
+    headerName: 'Manufacture',
     type: [ColumnTypeEnum.text],
   },
   {
     field: 'model',
+    headerName: 'Model',
     type: [ColumnTypeEnum.text],
   },
   {
     field: 'assert_number',
+    headerName: 'Assert Number',
     type: [ColumnTypeEnum.text],
   },
   {
     field: 'serial_number',
+    headerName: 'Serial Number',
     type: [ColumnTypeEnum.text],
   },
   {
     field: 'ip_address',
+    headerName: 'IP Address',
     type: [ColumnTypeEnum.text],
   },
   {
     field: 'erp_id',
+    headerName: 'ERP ID',
     type: [ColumnTypeEnum.text],
   },
   {
     field: 'level',
+    headerName: 'Level',
   },
   {
     field: 'coverage',
+    headerName: 'Coverage',
     cellRenderer: 'agSparklineCellRenderer',
     cellRendererParams: {
       sparklineOptions: {
@@ -83,6 +91,7 @@ export const columnsConfig = AgGrid.colDefs<TData>([
   },
   {
     field: 'yield',
+    headerName: 'Yield',
     type: [ColumnTypeEnum.text],
   },
 ]);

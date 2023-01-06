@@ -12,7 +12,8 @@ const defaultGridProps = {
 type TAddArgs =
   | { item: 'sideBar'; options: { sideBarDef: SideBarDef } }
   | { item: 'resizable' }
-  | { item: 'sortable' };
+  | { item: 'sortable' }
+  | { item: 'filtering' };
 
 const defaultSideBar: SideBarDef = {
   toolPanels: [
@@ -83,6 +84,18 @@ export class Builder<TData> {
           },
         };
       },
+      filtering: () => {
+        this.gridProps = {
+          ...this.gridProps,
+          gridOptions: {
+            ...this.gridProps.gridOptions,
+            defaultColDef: {
+              ...(this.gridProps.gridOptions?.defaultColDef || {}),
+              filter: true,
+            },
+          },
+        };
+      },
     };
     // @ts-expect-error fixme: I don't know what type
     map[addArgs.item](addArgs?.options);
@@ -96,6 +109,11 @@ export class Builder<TData> {
 
   sortable = (): Builder<TData> => {
     this.add({ item: 'sortable' });
+    return this;
+  };
+
+  filtering = (): Builder<TData> => {
+    this.add({ item: 'filtering' });
     return this;
   };
 

@@ -25,6 +25,7 @@ function GridWrapper() {
     .withSideBar()
     .resizable()
     .sortable()
+    .filtering()
     .buildGrid();
 
   // const onClick = () => {
