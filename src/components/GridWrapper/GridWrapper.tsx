@@ -12,10 +12,17 @@ function GridWrapper() {
   const columnDefs = columnsConfig;
 
   const gridOptions: GridOptions<TData> = {
-    columnDefs,
     defaultColDef,
     columnTypes: AgGrid.columnTypes<TData>('primaryKey', 'text'),
   };
+
+  const { gridOptions: newGridOptions } = new AgGrid.Builder<TData>({
+    gridOptions,
+  })
+    .add({ item: 'sideBar' })
+    .resizable()
+    .sortable()
+    .buildGrid();
 
   const onClick = () => {
     setRowData(prev => {
@@ -36,7 +43,7 @@ function GridWrapper() {
       <GridWToolbar
         rowData={rowData}
         columnDefs={columnDefs}
-        gridOptions={gridOptions}
+        gridOptions={newGridOptions}
         toolbar={toolbar}
       />
     </>

@@ -19,7 +19,6 @@ const formatter = (params: BarFormatterParams) => {
 export const defaultColDef = {
   flex: 1,
   minWidth: 100,
-  resizable: true,
 };
 
 export const columnsConfig = AgGrid.colDefs<TData>([
