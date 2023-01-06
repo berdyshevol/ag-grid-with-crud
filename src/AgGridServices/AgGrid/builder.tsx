@@ -10,7 +10,7 @@ const defaultGridProps = {
 };
 
 type TAddArgs =
-  | { item: 'sideBar' }
+  | { item: 'sideBar'; options: { sideBarDef: SideBarDef } }
   | { item: 'resizable' }
   | { item: 'sortable' };
 
@@ -50,12 +50,12 @@ export class Builder<TData> {
 
   add = (addArgs: TAddArgs): Builder<TData> => {
     const map = {
-      sideBar: () => {
+      sideBar: ({ sideBarDef }: { sideBarDef: SideBarDef }) => {
         this.gridProps = {
           ...this.gridProps,
           gridOptions: {
             ...this.gridProps.gridOptions,
-            sideBar: defaultSideBar,
+            sideBar: sideBarDef,
           },
         };
       },
@@ -84,7 +84,8 @@ export class Builder<TData> {
         };
       },
     };
-    map[addArgs.item]();
+    // @ts-expect-error fixme: I don't know what type
+    map[addArgs.item](addArgs?.options);
     return this;
   };
 
@@ -95,6 +96,11 @@ export class Builder<TData> {
 
   sortable = (): Builder<TData> => {
     this.add({ item: 'sortable' });
+    return this;
+  };
+
+  withSideBar = () => {
+    this.add({ item: 'sideBar', options: { sideBarDef: defaultSideBar } });
     return this;
   };
 

@@ -19,7 +19,7 @@ function GridWrapper() {
   const { gridOptions: newGridOptions } = new AgGrid.Builder<TData>({
     gridOptions,
   })
-    .add({ item: 'sideBar' })
+    .withSideBar()
     .resizable()
     .sortable()
     .buildGrid();
