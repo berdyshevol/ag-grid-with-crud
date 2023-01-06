@@ -8,7 +8,10 @@ import { GridWToolbar } from '../GridWToolbar';
 import { AgGridToolbarParams } from '../AgGridToolbar';
 
 function GridWrapper() {
-  const [rowData, setRowData] = useState(data);
+  const [
+    rowData,
+    // setRowData
+  ] = useState(data);
   const columnDefs = columnsConfig;
 
   const gridOptions: GridOptions<TData> = {
@@ -24,14 +27,14 @@ function GridWrapper() {
     .sortable()
     .buildGrid();
 
-  const onClick = () => {
-    setRowData(prev => {
-      return prev.map((el: any) => ({
-        ...el,
-        coverage: el.coverage + 1,
-      }));
-    });
-  };
+  // const onClick = () => {
+  //   setRowData(prev => {
+  //     return prev.map((el: any) => ({
+  //       ...el,
+  //       coverage: el.coverage + 1,
+  //     }));
+  //   });
+  // };
 
   const toolbar: AgGridToolbarParams = {
     right: ['search'],
@@ -39,7 +42,7 @@ function GridWrapper() {
 
   return (
     <>
-      <button onClick={onClick}>Get Data</button>
+      {/* <button onClick={onClick}>Get Data</button> */}
       <GridWToolbar
         rowData={rowData}
         columnDefs={columnDefs}
