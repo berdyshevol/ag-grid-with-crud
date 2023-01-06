@@ -10,7 +10,7 @@ export const data: TData[] = [
     assert_number: '383838383',
     erp_id: '383838383',
     level: 100,
-    coverage: 10,
+    coverage: [10],
     yield: '???',
   },
   {
@@ -22,7 +22,7 @@ export const data: TData[] = [
     assert_number: '383838383',
     erp_id: '383838383',
     level: 50,
-    coverage: 20,
+    coverage: [40],
     yield: '???',
   },
   {
@@ -34,7 +34,7 @@ export const data: TData[] = [
     assert_number: '383838383',
     erp_id: '383838383',
     level: 50,
-    coverage: 40,
+    coverage: [50],
     yield: '???',
   },
   {
@@ -46,7 +46,7 @@ export const data: TData[] = [
     assert_number: '383838383',
     erp_id: '383838383',
     level: 50,
-    coverage: 60,
+    coverage: [80],
     yield: '???',
   },
 ];

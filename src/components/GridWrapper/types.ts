@@ -7,7 +7,7 @@ export type TData = {
   ip_address: string;
   erp_id: string;
   level: Percent;
-  coverage: Percent;
+  coverage: Percent[];
   yield: string;
 };
 
