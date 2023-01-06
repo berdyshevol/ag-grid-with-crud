@@ -36,7 +36,7 @@ export const columnsConfig = AgGrid.colDefs<TData>([
   {
     field: 'assert_number',
     headerName: 'Assert Number',
-    type: [ColumnTypeEnum.text],
+    type: [ColumnTypeEnum.number],
   },
   {
     field: 'serial_number',
@@ -60,6 +60,7 @@ export const columnsConfig = AgGrid.colDefs<TData>([
   {
     field: 'coverage',
     headerName: 'Coverage',
+    type: [ColumnTypeEnum.number],
     cellRenderer: 'agSparklineCellRenderer',
     cellRendererParams: {
       sparklineOptions: {

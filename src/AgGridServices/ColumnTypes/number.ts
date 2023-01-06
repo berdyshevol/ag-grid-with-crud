@@ -1,8 +1,8 @@
 import { ColDef } from '@ag-grid-community/core';
 
-export const text: ColDef = {
-  cellClass: 'TextAligned_Left',
-  filter: 'agTextColumnFilter',
+export const number: ColDef = {
+  cellClass: 'TextAligned_Right',
+  filter: 'agNumberColumnFilter',
   filterParams: {
     buttons: ['clear'],
     applyMiniFilterWhileTyping: true,

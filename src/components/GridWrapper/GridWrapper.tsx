@@ -16,7 +16,7 @@ function GridWrapper() {
 
   const gridOptions: GridOptions<TData> = {
     defaultColDef,
-    columnTypes: AgGrid.columnTypes<TData>('primaryKey', 'text'),
+    columnTypes: AgGrid.columnTypes<TData>('primaryKey', 'text', 'number'),
   };
 
   const { gridOptions: newGridOptions } = new AgGrid.Builder<TData>({
