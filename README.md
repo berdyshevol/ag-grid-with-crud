@@ -1,6 +1,6 @@
 # Ag Grid with CRUD functionality
 
-This project is an example of using AG Grid for editing a table. 
+This project is an example of using AG Grid (React) for editing a table.
 
 ### `git clone git@github.com:berdyshevol/ag-grid-with-crud.git`
 ### `yarn install`
